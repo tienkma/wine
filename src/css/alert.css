@@ -1,0 +1,29 @@
+.alert {
+  padding: 16px 20px;
+  position: fixed;
+  top: 110px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--background);
+  font-size: 14px;
+  z-index: 9;
+  font-weight: bold;
+  border-radius: 10px;
+  display: none;
+  transition: 0.3s linear;
+  text-transform: capitalize;
+}
+
+.alert.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+
+  display: inline-block;
+}
+.alert.alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+  display: inline-block;
+}

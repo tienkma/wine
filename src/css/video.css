@@ -1,0 +1,42 @@
+#video {
+  margin-top: 100px;
+  width: 100%;
+  height: calc(100vh - 100px);
+  position: relative;
+}
+
+#video video {
+  object-fit: cover;
+}
+
+#video .video_title {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  left: 10%;
+}
+
+#video .video_title h1 {
+  font-size: 90px;
+  text-transform: uppercase;
+  color: var(--color);
+}
+#video .video_title h4 {
+  font-size: 40px;
+  margin-top: 20px;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 687px) {
+  #video {
+    height: 60vh;
+  }
+  #video .video_title h1 {
+    font-size: 70px;
+  }
+  #video .video_title h4 {
+    font-size: 30px;
+  }
+}

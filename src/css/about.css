@@ -1,0 +1,41 @@
+#about .contentAbout article {
+  display: flex;
+}
+#about .contentAbout article > div {
+  width: 50%;
+  color: var(--background);
+}
+
+#about .contentAbout article .aboutInfo {
+  padding: 50px;
+}
+#about .contentAbout article:nth-child(2n) {
+  flex-direction: row-reverse;
+  color: #fff;
+  background-color: var(--background);
+}
+
+#about .contentAbout article:nth-child(2n) div {
+  color: #fff;
+}
+#about .contentAbout article h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+#about .contentAbout article h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+#about .contentAbout article p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  #about .contentAbout article {
+    flex-direction: column !important;
+  }
+  #about .contentAbout article > div {
+    width: 100%;
+  }
+}

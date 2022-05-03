@@ -1,0 +1,21 @@
+#loadding div {
+  position: relative;
+  width: 90px;
+  margin: auto;
+  height: 150px;
+}
+
+#loadding div img:first-child {
+  position: absolute;
+  top: 5px;
+}
+
+#loadding div img:last-child {
+  mix-blend-mode: darken;
+  position: absolute;
+}
+#loadding h3 {
+  color: var(--background);
+  text-align: center;
+  margin-top: 20px;
+}

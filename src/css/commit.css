@@ -1,0 +1,75 @@
+#commit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#commit .commit_title {
+  margin-bottom: 70px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+#commit .commit_title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--background);
+  width: 100%;
+  height: 2px;
+  z-index: 1;
+}
+
+#commit h1 {
+  font-size: 32px;
+  border: 2px solid var(--background);
+  padding: 8px 14px;
+  display: inline-block;
+  background-color: #eee;
+  z-index: 2;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#commit .commitList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 50px;
+}
+
+#commit .commitList article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#commit .commitList article img {
+  width: 50%;
+  height: auto;
+  margin-bottom: 30px;
+}
+#commit .commitList article h3 {
+  font-size: 16px;
+}
+
+#commit .commitList article .complementary {
+  margin-bottom: 20px;
+}
+#commit .commitList article p {
+  text-align: center;
+}
+
+@media (max-width: 1023px) {
+  #commit .commitList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  #commit .commitList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

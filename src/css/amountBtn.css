@@ -1,0 +1,16 @@
+.amount-btns {
+  display: grid;
+  width: 140px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.amount-btns button {
+  background: transparent;
+  font-size: 16px;
+}
+.amount-btns h2 {
+  font-size: 32px;
+  color: var(--background);
+}

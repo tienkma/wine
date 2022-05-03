@@ -1,13 +1,90 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+:root {
+  --background: #0d1928;
+  --color: #7a2121;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+button:active {
+  transform: scale(0.9);
+}
+
+button.btn,
+.btn {
+  padding: 14px 18px;
+  background-color: var(--background);
+  color: #fff;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.btn {
+  transition: 0.3s linear;
+}
+
+.btn:hover {
+  background-color: var(--color) !important;
+}
+
+.container {
+  padding: 30px 70px;
+}
+
+.bk {
+  background-color: #d7b5a5;
+}
+
+.flex {
+  display: flex;
+  margin-left: 30px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 20px 40px;
+  }
+}
+@media (max-width: 567px) {
+  .container {
+    padding: 20px 10px;
+  }
 }

@@ -1,0 +1,16 @@
+#pageHero {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
+#pageHero h2 a {
+  color: var(--background);
+}
+
+@media (max-width: 576px) {
+  #pageHero h2 {
+    font-size: 20px;
+  }
+}

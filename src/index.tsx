@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { HomeProvider } from "./context/HomeContext";
+import { FilterProvider } from "./context/FilterContext";
+import { CartProvider } from "./context/CartContext";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+// Create a root.
+const root = ReactDOM.createRoot(document.getElementById("root")!);
+
+root.render(
+  <HomeProvider>
+    <FilterProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </FilterProvider>
+  </HomeProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//https://stackoverflow.com/questions/71684417/upgrading-to-react18-and-react-dom18-fails
