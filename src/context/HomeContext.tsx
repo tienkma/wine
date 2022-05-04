@@ -10,7 +10,7 @@ const initState: typeState = {
   home_error: true,
   home_loading: true,
   home_navbar: false,
-  home_verification: false,
+  home_verification: true,
   item_data: {
     wine: "",
     winery: "",
