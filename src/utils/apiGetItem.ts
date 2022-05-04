@@ -5,6 +5,6 @@ export const getItem = (id: number) => {
     setTimeout(() => {
       const findItem = data.find((item) => item.id === id);
       resolve(findItem);
-    }, 500);
+    }, 1000);
   });
 };
