@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Header, Verification, Alert, SideBar } from "./components";
 import { useHomeContact } from "./context/HomeContext";
 import {
@@ -8,30 +10,46 @@ import {
   ProductsPage,
   WineItemPage,
   AboutPage,
+  LoginPage,
 } from "./pages";
 
 function App() {
   const {
-    state: { home_verification },
+    state: { home_verification, isLogin },
   } = useHomeContact();
 
   if (home_verification) {
     return <Verification />;
   }
 
+  // TODO error page
+
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
       <SideBar />
       <Alert />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/products/:id" element={<WineItemPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
-    </BrowserRouter>
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/products" exact>
+          <ProductsPage />
+        </Route>
+        <Route path="/products/:id">
+          <WineItemPage />
+        </Route>
+        <Route path="/cart">
+          <CartPage />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

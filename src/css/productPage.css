@@ -222,6 +222,7 @@ input[type="range"]::-ms-thumb {
 }
 #product_page #sortContent form label {
   font-size: 1rem;
+  color: #000;
   text-transform: capitalize;
 }
 
@@ -242,6 +243,14 @@ input[type="range"]::-ms-thumb {
   max-width: 400px;
 }
 
+.btn_change-index.btn_page {
+  background-color: #b93737 !important;
+}
+
+.btn_change-index.btn_page svg {
+  color: #fff;
+}
+
 @media (max-width: 640px) {
   #product_content .listProduct .cart_item {
     width: 80%;
@@ -259,9 +268,10 @@ input[type="range"]::-ms-thumb {
 }
 
 #product_content .listPage {
-  display: block;
-
+  display: flex;
+  justify-content: center;
   margin: 20px auto;
+  flex-wrap: wrap;
 }
 #product_content .listPage .btn_page {
   width: 32px;

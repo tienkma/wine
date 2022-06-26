@@ -8,7 +8,7 @@ const Verification = () => {
   const { setVerification } = useHomeContact();
   const [model, serModle] = useState(false);
   return (
-    <main id="verification">
+    <main id="verification" >
       <div className="backGround"></div>
       <div className="title">
         <img src={logo} alt="logo" />

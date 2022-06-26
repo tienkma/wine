@@ -5,9 +5,10 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { FiUserPlus, FiUserMinus } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
+import { useHomeContact } from "../context/HomeContext";
 
 const CartButton: React.FC<{ closeSidebar?: () => void }> = (props) => {
-  const [login, setLogin] = useState(false);
+  const [isUser, setIsUser] = useState(false);
 
   const {
     state: { listCart },
@@ -20,18 +21,21 @@ const CartButton: React.FC<{ closeSidebar?: () => void }> = (props) => {
         </p>
         <div className="header-sp">
           <div className="header-sp_top">
-            <a href="#">support</a>
+            <a href="tel:+18006012">support</a>
           </div>
           <p className="header-sp_bottom">1800 6012</p>
         </div>
       </div>
       <div className="header_info-item">
         <p className="header-icon">
-          {!login ? <FiUserPlus /> : <FiUserMinus />}
+          {!isUser ? <FiUserPlus /> : <FiUserMinus />}
         </p>
         <div className="header-sp">
           <div className="header-sp_top">
-            <a href="">{login ? "logout" : "Login"}</a>
+            {/* //TODO logout */}
+            <Link to="/login" onClick={props.closeSidebar}>
+              {isUser ? "logout" : "Login"}
+            </Link>
           </div>
           <p className="header-sp_bottom">Customer</p>
         </div>

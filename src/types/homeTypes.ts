@@ -8,6 +8,7 @@ export enum types {
   GET_ITEM_ERROR = "GET_ITEM_ERROR",
   OPEN_SIDEBAR = "OPEN_SIDEBAR",
   CLOSE_SIDEBAR = "CLOSE_SIDEBAR",
+  SET_IS_LOGIN = "SET_IS_LOGIN",
 }
 
 export interface typeAction {
@@ -25,6 +26,7 @@ export interface typeState {
   item_data: typeItemWine;
   item_error: boolean;
   item_loading: boolean;
+  isLogin: boolean;
 }
 
 export interface typeItemWine {

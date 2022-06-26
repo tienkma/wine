@@ -1,4 +1,3 @@
-import React from "react";
 import { typeAction, types, typeState } from "../types/homeTypes";
 
 const {
@@ -11,6 +10,7 @@ const {
   GET_ITEM_ERROR,
   OPEN_SIDEBAR,
   CLOSE_SIDEBAR,
+  SET_IS_LOGIN,
 } = types;
 
 const homeReducer = (state: typeState, action: typeAction) => {
@@ -52,6 +52,9 @@ const homeReducer = (state: typeState, action: typeAction) => {
     }
     case CLOSE_SIDEBAR: {
       return { ...state, home_navbar: false };
+    }
+    case SET_IS_LOGIN: {
+      return { ...state, isLogin: !state.isLogin };
     }
     default: {
       return state;

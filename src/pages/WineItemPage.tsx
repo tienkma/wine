@@ -7,7 +7,7 @@ import { useHomeContact } from "../context/HomeContext";
 import "../css/wineItemPage.css";
 
 const WineItemPage = () => {
-  const { id } = useParams();
+  const { id }: { id: string } = useParams();
   const { getItemWine } = useHomeContact();
   const { getCartItem } = useCartContext();
   useEffect(() => {

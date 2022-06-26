@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import "../css/video.css";
 
@@ -22,4 +22,4 @@ const Video = () => {
   );
 };
 
-export default Video;
+export default memo(Video);

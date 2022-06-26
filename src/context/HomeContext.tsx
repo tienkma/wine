@@ -3,6 +3,7 @@ import homeReducer from "../reducers/homeReducer";
 import { typeItemWine, types, typeState } from "../types/homeTypes";
 import { telephoneAPI } from "../utils/api";
 import { getItem } from "../utils/apiGetItem";
+import { useFormik } from "formik";
 
 const initState: typeState = {
   homeCartList: [],
@@ -11,6 +12,7 @@ const initState: typeState = {
   home_loading: true,
   home_navbar: false,
   home_verification: true,
+  isLogin: true,
   item_data: {
     wine: "",
     winery: "",
@@ -30,12 +32,14 @@ const HomeContext = createContext<{
   getItemWine: (id: number) => void;
   openSidebar: () => void;
   closeSidebar: () => void;
+  setIsLogin: Function;
 }>({
   state: initState,
   setVerification: () => {},
   getItemWine: () => {},
   openSidebar: () => {},
-  closeSidebar: () => {},
+  closeSidebar: Function,
+  setIsLogin: Function,
 });
 
 const {
@@ -48,6 +52,7 @@ const {
   GET_ITEM_ERROR,
   OPEN_SIDEBAR,
   CLOSE_SIDEBAR,
+  SET_IS_LOGIN,
 } = types;
 const HomeProvider: React.FC = (props) => {
   const [state, dispatch] = useReducer(homeReducer, initState);
@@ -89,12 +94,17 @@ const HomeProvider: React.FC = (props) => {
     dispatch({ type: CLOSE_SIDEBAR });
   };
 
+  const setIsLogin = () => {
+    dispatch({ type: SET_IS_LOGIN });
+  };
+
   const value = {
     state,
     setVerification,
     getItemWine,
     openSidebar,
     closeSidebar,
+    setIsLogin,
   };
   return (
     <HomeContext.Provider value={value}>{props.children}</HomeContext.Provider>

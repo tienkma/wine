@@ -54,6 +54,7 @@
 }
 #commit .commitList article h3 {
   font-size: 16px;
+  text-align: center;
 }
 
 #commit .commitList article .complementary {
